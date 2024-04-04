@@ -140,11 +140,11 @@ def display_instances(image, boxes, masks, class_ids, class_names,
                                    alpha=0.7, linestyle="dashed",
                                    edgecolor=color, facecolor='none')
             ax.add_patch(p)
-
+          
+        class_id = class_ids[i]
         # Label
         if show_caption:
             if not captions:
-                class_id = class_ids[i]
                 score = scores[i] if scores is not None else None
                 label = class_names[class_id]
                 caption = "{} {:.3f}".format(label, score) if score else label
